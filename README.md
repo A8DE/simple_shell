@@ -41,13 +41,13 @@ Usage: exit status, where status is an integer used to exit the shell
 Implement the setenv and unsetenv builtin commands
 
 setenv
-Initialize a new environment variable, or modify an existing one
-Command syntax: setenv VARIABLE VALUE
-Should print something on stderr on failure
+	Initialize a new environment variable, or modify an existing one
+	Command syntax: setenv VARIABLE VALUE
+	Should print something on stderr on failure
 unsetenv
-Remove an environment variable
-Command syntax: unsetenv VARIABLE
-Should print something on stderr on failure
+	Remove an environment variable
+	Command syntax: unsetenv VARIABLE
+	Should print something on stderr on failure
 
 10. cd
 Changes the current directory of the process.
