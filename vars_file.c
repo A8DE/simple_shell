@@ -135,7 +135,7 @@ int replace_vars(info_t *inf)
 					_strdup(_strchr(nod->str, '=') + 1));
 			continue;
 		}
-		replace_string(&info->argv[i], _strdup(""));
+		replace_string(&inf->argv[i], _strdup(""));
 
 	}
 	return (0);

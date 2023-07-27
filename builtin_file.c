@@ -66,7 +66,7 @@ int _mycd(info_t *inf)
 	}
 	else
 		chd_ret = chdir(inf->argv[1]);
-		s
+		
 	if (chd_ret == -1)
 	{
 		print_error(inf, "cant CD ");

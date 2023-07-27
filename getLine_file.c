@@ -67,7 +67,7 @@ ssize_t get_input(info_t *inf)
 		{
 			if (is_chain(inf, buf, &y))
 				break;
-			j++;
+			y++;
 		}
 
 		x = y + 1;
@@ -78,7 +78,7 @@ ssize_t get_input(info_t *inf)
 		}
 
 		*buf_p = po;
-		return (_strle(po));
+		return (_strlen(po));
 	}
 
 	*buf_p = buf;
@@ -141,7 +141,7 @@ int _getline(info_t *inf, char **ptr, size_t *leg)
 	else
 		_strncpy(new_po, buf + z, t - z + 1);
 
-	s += t - i;
+	s += t - z;
 	z = t;
 	po = new_po;
 

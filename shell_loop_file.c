@@ -32,7 +32,7 @@ int hsh(info_t *inf, char **v)
 	}
 	write_history(inf);
 	free_info(inf, 1);
-	if (!interactive(inf) && info->status)
+	if (!interactive(inf) && inf->status)
 		exit(inf->status);
 	if (builtin_r == -2)
 	{
@@ -68,7 +68,7 @@ int find_builtin(info_t *inf)
 	};
 
 	for (i = 0; builtin_tbl[i].type; i++)
-		if (_strcmp(info->argv[0], builtin_tbl[i].type) == 0)
+		if (_strcmp(inf->argv[0], builtin_tbl[i].type) == 0)
 		{
 			inf->line_count++;
 			built_inret = builtin_tbl[i].func(inf);
@@ -88,7 +88,7 @@ void find_cmd(info_t *inf)
 	char *pat = NULL;
 	int i, k;
 
-	inf->pat = inf->argv[0];
+	inf->path = inf->argv[0];
 	if (inf->linecount_flag == 1)
 	{
 		inf->line_count++;
@@ -103,13 +103,12 @@ void find_cmd(info_t *inf)
 	pat = find_path(inf, _getenv(inf, "PATH="), inf->argv[0]);
 	if (pat)
 	{
-		inf->pat = pat;
+		inf->path = pat;
 		fork_cmd(inf);
 	}
 	else
 	{
-		if (_getenv(inf, "PATH=") || (interactive(inf)
-					|| inf->argv[0][0] == '/') && is_cmd(inf, inf->argv[0]))
+		if (_getenv(inf, "PATH=") || (interactive(inf) || (inf->argv[0][0] == '/') && is_cmd(inf, inf->argv[0])))
 			fork_cmd(inf);
 		else if (*(inf->arg) != '\n')
 		{
@@ -118,7 +117,7 @@ void find_cmd(info_t *inf)
 		}
 	}
 }
-
+	 
 /**
  * fork_cmd - Function Forks Exec Thread Run Cmd
  * @inf: Parameter Return Info Struct

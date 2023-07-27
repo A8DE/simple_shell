@@ -37,7 +37,7 @@ char **list_to_strings(list_t *he)
 	strs = malloc(sizeof(char *) * (x + 1));
 	if (!strs)
 		return (NULL);
-	for (i = 0; nod; nod = nod->next, i++)
+	for (x = 0; nod; nod = nod->next, x++)
 	{
 		str = malloc(_strlen(nod->str) + 1);
 		if (!str)
@@ -48,7 +48,7 @@ char **list_to_strings(list_t *he)
 			return (NULL);
 		}
 
-		str = _strcpy(str, node->str);
+		str = _strcpy(str, nod->str);
 		strs[x] = str;
 	}
 	strs[x] = NULL;

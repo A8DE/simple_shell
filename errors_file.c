@@ -53,7 +53,7 @@ int _putfd(char ch, int file_d)
 
 	if (ch == BUF_FLUSH || in >= WRITE_BUF_SIZE)
 	{
-		write(ile_d, buf, in);
+		write(file_d, buf, in);
 		in = 0;
 	}
 	if (ch != BUF_FLUSH)

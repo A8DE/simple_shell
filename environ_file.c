@@ -69,7 +69,7 @@ int _myunsetenv(info_t *inf)
 		_eputs("Too few arguements.\n");
 		return (1);
 	}
-	for (i = 1; in <= inf->argc; in++)
+	for (in = 1; in <= inf->argc; in++)
 		_unsetenv(inf, inf->argv[in]);
 
 	return (0);
@@ -87,8 +87,8 @@ int populate_env_list(info_t *inf)
 
 	for (in = 0; environ[in]; in++)
 		add_node_end(&nod, environ[in], 0);
-		inf->env = nod;
-		return (0);
+	inf->env = nod;
+	return (0);
 }
 
 

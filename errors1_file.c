@@ -19,7 +19,7 @@ int _erratoi(char *st)
 		if (st[in] >= '0' && st[in] <= '9')
 		{
 			res *= 10;
-			res += (s[i] - '0');
+			res += (st[in] - '0');
 			if (res > INT_MAX)
 				return (-1);
 		}
@@ -71,14 +71,14 @@ int print_d(int inp, int file_d)
 	else
 	 v = inp;
 	cur = v;
-	for (i = 1000000000; i > 1; i /= 10)
+	for (in = 1000000000; in > 1; in /= 10)
 	{
-		if  v / i)
+		if  (v / in)
 		{
-			putc('0' + cur / i);
+			putc('0' + cur / in);
 			count++;
 		}
-		cur %= i;
+		cur %= in;
 	}
 	putc('0' + cur);
 	count++;
@@ -88,24 +88,24 @@ int print_d(int inp, int file_d)
 
 /**
  * convert_number - Function Converter
- * @n: Number
+ * @nu: Number
  * @b: Base
  * @f: Argument Flags
  * Return: string
  */
 
 
-char *convert_number(long int n, int b, int f)
+char *convert_number(long int nu, int b, int f)
 {
 	static char *arr;
 	static char buf[50];
 	char si = 0;
 	char *p;
-	unsigned long n = n;
+	unsigned long n = nu;
 
-	if (!(f & CONVERT_UNSIGNED) && n < 0)
+	if (!(f & CONVERT_UNSIGNED) && nu < 0)
 	{
-		n = -n;
+		n = -nu;
 		si = '-';
 
 	}

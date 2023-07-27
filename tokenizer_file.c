@@ -26,7 +26,7 @@ char **strtow(char *st, char *d)
 	s = malloc((1 + num_words) * sizeof(char *));
 	if (!s)
 		return (NULL);
-	for (x = 0, y = 0; y < num_words; j++)
+	for (x = 0, y = 0; y < num_words; y++)
 	{
 		while (is_delim(st[x], d))
 			x++;

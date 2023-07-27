@@ -22,7 +22,7 @@ char *_strncpy(char *des, char *sr, int ch)
 	if (in < ch)
 	{
 		v = in;
-		while (v < n)
+		while (v < ch)
 		{
 			des[v] = '\0';
 			v++;
@@ -55,7 +55,7 @@ char *_strncat(char *des, char *sr, int am)
 		x++;
 		y++;
 	}
-	if (y < n)
+	if (y < am)
 		des[x] = '\0';
 	return (c);
 }

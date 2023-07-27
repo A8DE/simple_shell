@@ -21,22 +21,22 @@ void set_info(info_t *inf, char **ar)
 {
 	int in = 0;
 
-	info->fname = ar[0];
-	if (info->arg)
+	inf->fname = ar[0];
+	if (inf->arg)
 	{
-		info->argv = strtow(info->arg, " \t");
-		if (!info->argv)
+		inf->argv = strtow(inf->arg, " \t");
+		if (!inf->argv)
 		{
-			info->argv = maloc(sizeof(char *) * 2);
-			if (info->argv)
+			inf->argv = malloc(sizeof(char *) * 2);
+			if (inf->argv)
 			{
-				info->argv[0] = _strdup(info->arg);
-				info->argv[1] = NULL;
+				inf->argv[0] = _strdup(inf->arg);
+				inf->argv[1] = NULL;
 			}
 		}
-		for (in = 0; info->argv && info->argv[in]; in++)
+		for (in = 0; inf->argv && inf->argv[in]; in++)
 			;
-		info->argc = in;
+		inf->argc = in;
 
 		replace_alias(inf);
 		replace_vars(inf);

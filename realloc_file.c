@@ -62,7 +62,7 @@ void *_realloc(void *pt, unsigned int old_s, unsigned int new_s)
 	old_s = old_s < new_s ? old_s : new_s;
 
 	while (old_s--)
-		p[old_s] = ((char *)pt)[old_s];
+		po[old_s] = ((char *)pt)[old_s];
 	free(pt);
 	return (po);
 }
