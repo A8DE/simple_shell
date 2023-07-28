@@ -6,7 +6,6 @@
  * @v: Argument Vector From main()
  * Return: success 0, Error 1, or error code
  */
-
 int hsh(info_t *inf, char **v)
 {
 	ssize_t r = 0;
@@ -51,7 +50,6 @@ int hsh(info_t *inf, char **v)
  * found but not successful 1 ,
  * signals exit() 2,
  */
-
 int find_builtin(info_t *inf)
 {
 	int i, built_inret = -1;
@@ -123,7 +121,6 @@ void find_cmd(info_t *inf)
  * @inf: Parameter Return Info Struct
  * Return: void
  */
-
 void fork_cmd(info_t *inf)
 {
 	pid_t child_pid;
@@ -131,7 +128,6 @@ void fork_cmd(info_t *inf)
 	child_pid = fork();
 	if (child_pid == -1)
 	{
-		/* TODO: PUT ERROR FUNCTION */
 		perror("Error:");
 		return;
 	}
