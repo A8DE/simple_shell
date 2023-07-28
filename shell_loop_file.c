@@ -117,12 +117,13 @@ void find_cmd(info_t *inf)
 		}
 	}
 }
-	 
+
 /**
  * fork_cmd - Function Forks Exec Thread Run Cmd
  * @inf: Parameter Return Info Struct
  * Return: void
  */
+
 void fork_cmd(info_t *inf)
 {
 	pid_t child_pid;
