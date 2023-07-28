@@ -123,7 +123,6 @@ void find_cmd(info_t *inf)
  * @inf: Parameter Return Info Struct
  * Return: void
  */
-
 void fork_cmd(info_t *inf)
 {
 	pid_t child_pid;
