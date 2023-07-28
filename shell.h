@@ -235,5 +235,4 @@ char **list_to_strings(list_t *);
 ssize_t get_node_index(list_t *, list_t *);
 list_t *node_starts_with(list_t *, char *, char);
 
-
 #endif

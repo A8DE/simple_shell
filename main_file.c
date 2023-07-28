@@ -6,7 +6,6 @@
  * @v: Arg Vector
  * Return: Success 0, Error 1
  */
-
 int main(int c, char **v)
 {
 	info_t inf[] = {INFO_INIT};
